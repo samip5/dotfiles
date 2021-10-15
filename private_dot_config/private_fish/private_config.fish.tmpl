@@ -12,12 +12,10 @@ if type -q flux
     flux completion fish | source
 end
 
-set PATH {{ .chezmoi.homeDir }}/.cargo/bin:{{ .chezmoi.homeDir }}/.krew/bin:{{ .chezmoi.homeDir }}/go/bin:{{ .chezmoi.homeDir }}/bin PATH
-
-#fish_add_path "{{ .chezmoi.homeDir }}/.cargo/bin"
-#fish_add_path "{{ .chezmoi.homeDir }}/.krew/bin"
-#fish_add_path "{{ .chezmoi.homeDir }}/go/bin"
-#fish_add_path "{{ .chezmoi.homeDir }}/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/.cargo/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/.krew/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/go/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/bin"
 
 
 {{- if (eq .chezmoi.os "darwin") }}
