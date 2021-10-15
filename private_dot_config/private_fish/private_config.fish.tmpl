@@ -1,0 +1,35 @@
+set -gx KUBE_EDITOR nano
+set -gx VISUAL nano
+set -gx EDITOR nano
+
+set -gx GOPATH {{ .chezmoi.homeDir }}/go
+
+if type -q direnv
+    direnv hook fish | source
+end
+
+if type -q flux
+    flux completion fish | source
+end
+
+fish_add_path "{{ .chezmoi.homeDir }}/.cargo/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/.krew/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/go/bin"
+fish_add_path "{{ .chezmoi.homeDir }}/bin"
+
+
+{{- if (eq .chezmoi.os "darwin") }}
+set -gx HOMEBREW_NO_ANALYTICS 1
+
+fish_add_path "/usr/local/opt/curl/bin"
+fish_add_path "/usr/local/opt/gettext/bin"
+fish_add_path "/usr/local/opt/libiconv/bin"
+fish_add_path "/usr/local/opt/findutils/libexec/gnubin"
+fish_add_path "/usr/local/opt/coreutils/libexec/gnubin"
+fish_add_path "/usr/local/opt/grep/libexec/gnubin"
+fish_add_path "/usr/local/sbin"
+
+if type -q helm
+    helm completion fish | source
+end
+{{- end }}
