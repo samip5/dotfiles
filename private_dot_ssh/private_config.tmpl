@@ -1,0 +1,38 @@
+# all hosts
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_ecdsa
+  IdentityFile ~/.ssh/id_rsa
+{{- if (eq .chezmoi.os "darwin") }}
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+{{- end }}
+
+Host lakka
+  User samip537
+  Hostname lakka.kapsi.fi
+
+Host hilla
+  User samip537
+  Hostname hilla.kapsi.fi
+
+Host suomuurain
+  User samip537
+  Hostname suomuurain.kapsi.fi
+
+Host webapp1
+  User samip537
+  Hostname webapp1.kapsi.fi
+
+Host dh
+  User sm
+  Hostname dh.samip.dev
+
+Host matrix-ax
+  User samip537
+  Hostname matrix.pikaviestin.fi
+
+Host ns1
+  User sm
+  Hostname ns1.samipsolutions.fi
