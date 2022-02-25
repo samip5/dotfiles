@@ -1,22 +1,56 @@
-{{- $personal := false -}}{{/* true if this machine should have personal secrets from BitWarden */}}
-{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
-{{- $transient := false -}}{{/* true if this machine is temporary, e.g. a cloud or VM instance */}}
+{{- $personal := false -}}{{/* true if this machine is personal */}}
+{{- $work := false -}}{{/* true if this is a work machine */}}
+{{- $agekey := false -}}{{/* true if this machine has agekey to decrypt secret */}}
 {{- $kubernetes := false -}}{{/* true if this machine is used for Kubernetes work */}}
 
+{{- $hostname := "" -}}
+{{- if (eq .chezmoi.os "darwin") -}}
+  {{- $hostname = output "scutil" "--get" "LocalHostName"| trim -}}
+{{- else -}}
+  {{- $hostname = .chezmoi.hostname -}}
+{{- end -}}
 
-{{- $personal = promptBool "personal" -}}
-{{- $headless = promptBool "headless" -}}
-{{- $transient = promptBool "transient" -}}
-{{- $kubernetes = promptBool "kubernetes" -}}
+{{- if eq $hostname "Borg" -}}
+  {{- $personal = false -}}
+  {{- $work = true -}}
+  {{- $agekey = false -}}
+  {{- $kubernetes = true -}}
+{{- else  -}}
+  {{- $personal = promptBool "personal" -}}
+  {{- $work = promptBool "work" -}}
+  {{- $agekey = promptBool "agekey" -}}
+  {{- $kubernetes = promptBool "kubernetes" -}}  
+{{- end -}}
+
+
+
+{{- $srcRoot := (joinPath .chezmoi.homeDir "source") -}}
+{{- $sourceDir := "" -}}
+{{- $dotfilesrepo := "samip5/dotfiles" -}}
+{{- if $personal -}}
+  {{- $sourceDir = (printf "%s/github.com/%s" $srcRoot $dotfilesrepo) -}}
+{{- else if $work -}}
+  {{- $sourceDir = (printf "%s/personal/github.com/%s" $srcRoot $dotfilesrepo) -}}
+{{- end -}}
+
 
 format: yaml
-sourceDir: {{ .chezmoi.homeDir }}/code/repos/samip5/dotfiles
+sourceDir: {{ $sourceDir }}
 
 data:
-  {{- if (contains "termux" .chezmoi.homeDir) }} 
-  bash: "/data/data/com.termux/files/usr/bin/bash"
-  fish: "/data/data/com.termux/files/usr/bin/fish"
-  {{- else }}
-  bash: "/usr/bin/env bash"
-  fish: "/usr/bin/env fish"
-  {{- end }}
+  {{- if (eq .chezmoi.os "darwin") -}}
+  bash: /bin/bash
+  {{- end -}}
+  personal: {{ $personal }}
+  work: {{ $work }}
+  agekey: {{ $agekey }}
+  kubernetes: {{ $kubernetes }}
+  srcroot: {{ $srcRoot }}
+
+encryption: age
+
+{{- if $agekey }}
+age:
+  identity: {{ .chezmoi.homeDir }}/.config/age/keys.txt
+  recipient: 
+{{- end }}
