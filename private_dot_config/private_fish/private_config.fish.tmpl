@@ -22,6 +22,12 @@ fish_add_path "{{ .chezmoi.homeDir }}/bin"
 set -gx HOMEBREW_NO_ANALYTICS 1
 set -gx HOMEBREW_NO_ENV_HINTS 1
 
+{{- if (eq .work "true") }}
+eval (op signin remod)
+
+{{- end }}
+
+fish_add_path "/usr/local/opt/openssh/bin"
 fish_add_path "/usr/local/opt/curl/bin"
 fish_add_path "/usr/local/opt/gettext/bin"
 fish_add_path "/usr/local/opt/libiconv/bin"
@@ -36,3 +42,4 @@ end
 {{- end }}
 
 set fish_greeting
+fish_ssh_agent
