@@ -38,9 +38,6 @@ format: yaml
 sourceDir: {{ $sourceDir }}
 
 data:
-  {{- if (eq .chezmoi.os "darwin") -}}
-  bash: /bin/bash
-  {{- end -}}
   personal: {{ $personal }}
   work: {{ $work }}
   agekey: {{ $agekey }}
