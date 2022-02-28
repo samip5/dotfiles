@@ -22,8 +22,12 @@ fish_add_path "{{ .chezmoi.homeDir }}/bin"
 set -gx HOMEBREW_NO_ANALYTICS 1
 set -gx HOMEBREW_NO_ENV_HINTS 1
 
-{{- if (eq .work "true") }}
-eval (op signin remod)
+
+{{- if (eq .work true) }}
+if ! set -q INTELLIJ_ENVIRONMENT_READER
+ eval (op signin remod)
+end
+set -gx ANSIBLE_ROLES_PATH ~/code/ansible-roles:./roles
 
 {{- end }}
 
@@ -41,5 +45,5 @@ if type -q helm
 end
 {{- end }}
 
-set fish_greeting
+set -U fish_greeting
 fish_ssh_agent
