@@ -1,0 +1,17 @@
+fish_add_path {{ .chezmoi.homeDir }}/.local/bin
+fish_add_path {{ .chezmoi.homeDir }}/node_modules/.bin
+fish_add_path {{ .chezmoi.homeDir }}/go/bin
+
+{{ if .kubernetes -}}
+fish_add_path {{ .chezmoi.homeDir }}/.krew/bin
+{{ end -}}
+
+{{- if (eq .chezmoi.os "darwin") }}
+fish_add_path "/usr/local/opt/curl/bin"
+fish_add_path "/usr/local/opt/gettext/bin"
+fish_add_path "/usr/local/opt/libiconv/bin"
+fish_add_path "/usr/local/opt/findutils/libexec/gnubin"
+fish_add_path "/usr/local/opt/coreutils/libexec/gnubin"
+fish_add_path "/usr/local/opt/grep/libexec/gnubin"
+fish_add_path "/usr/local/sbin"
+{{- end }}

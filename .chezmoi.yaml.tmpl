@@ -1,7 +1,13 @@
-{{- $personal := false -}}{{/* true if this machine is personal */}}
-{{- $work := false -}}{{/* true if this is a work machine */}}
-{{- $agekey := false -}}{{/* true if this machine has agekey to decrypt secret */}}
+{{- /* Checks if running interactively */ -}}
+{{- $interactive := stdinIsATTY -}}
+
+{{- /* Template file for chezmoi config file */ -}}
+{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
 {{- $kubernetes := false -}}{{/* true if this machine is used for Kubernetes work */}}
+{{- $i3wm := false -}}{{/* true if this machine is using i3wm */}}
+{{- $swaywm := false -}}{{/* true if this machine is using swaywm */}}
+{{- $hyprlandwm := false -}}{{/* true if this machine is using hyprlandwm */}}
+{{- $agekey := false -}}{{/* true if this machine has agekey to decrypt secret */}}
 
 {{- $hostname := "" -}}
 {{- if (eq .chezmoi.os "darwin") -}}
@@ -10,44 +16,64 @@
   {{- $hostname = .chezmoi.hostname -}}
 {{- end -}}
 
-{{- if eq $hostname "Borg" -}}
-  {{- $personal = false -}}
-  {{- $work = true -}}
-  {{- $agekey = false -}}
-  {{- $kubernetes = true -}}
-{{- else  -}}
-  {{- $personal = promptBool "personal" -}}
-  {{- $work = promptBool "work" -}}
-  {{- $agekey = promptBool "agekey" -}}
-  {{- $kubernetes = promptBool "kubernetes" -}}  
+{{- $hostname := .chezmoi.hostname -}}
+{{- if eq $hostname "Ryzen-Gaming-Gentoo" -}}
+{{-   $headless = false -}}
+{{-   $kubernetes = true -}}
+{{-   $i3wm = false -}}
+{{-   $swaywm = false -}}
+{{-   $hyprlandwm = false -}}
+{{-   $agekey = true -}}
+{{- end -}}
+{{- if eq $hostname "Orion" -}}
+{{-   $headless = false -}}
+{{-   $kubernetes = true -}}
+{{-   $i3wm = false -}}
+{{-   $swaywm = false -}}
+{{-   $hyprlandwm = false -}}
+{{-   $agekey = true -}}
+{{- end -}}
+{{- if eq $hostname "Aurora" -}}
+{{-   $headless = false -}}
+{{-   $kubernetes = true -}}
+{{-   $i3wm = false -}}
+{{-   $swaywm = true -}}
+{{-   $hyprlandwm = true -}}
+{{-   $agekey = true -}}
+{{- end -}}
+{{- if hasKey . "headless" -}}
+{{-   $headless = .headless -}}
+{{- else if $interactive -}}
+{{-   $headless = promptBool "headless" -}}
+{{- end -}}
+{{- if hasKey . "kubernetes" -}}
+{{-   $kubernetes = .kubernetes -}}
+{{- else if $interactive -}}
+{{-   $kubernetes = promptBool "kubernetes" -}}
+{{- end -}}
+{{- if hasKey . "agekey" -}}
+{{-   $agekey = .agekey -}}
+{{- else if $interactive -}}
+{{-   $agekey = promptBool "agekey" -}}
 {{- end -}}
 
-
-
-{{- $srcRoot := (joinPath .chezmoi.homeDir "source") -}}
-{{- $sourceDir := "" -}}
-{{- $dotfilesrepo := "samip5/dotfiles" -}}
-{{- if $personal -}}
-  {{- $sourceDir = (printf "%s/github.com/%s" $srcRoot $dotfilesrepo) -}}
-{{- else if $work -}}
-  {{- $sourceDir = (printf "%s/personal/github.com/%s" $srcRoot $dotfilesrepo) -}}
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your data with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
-
-
-format: yaml
-sourceDir: {{ $sourceDir }}
 
 data:
-  personal: {{ $personal }}
-  work: {{ $work }}
-  agekey: {{ $agekey }}
+  headless: {{ $headless }}
   kubernetes: {{ $kubernetes }}
-  srcroot: {{ $srcRoot }}
-
+  i3wm: {{ $i3wm }}
+  swaywm: {{ $swaywm }}
+  hyprlandwm: {{ $hyprlandwm }}
+  agekey: {{ $agekey }}
+format: yaml
 encryption: age
-
 {{- if $agekey }}
 age:
-  identity: {{ .chezmoi.homeDir }}/.config/age/keys.txt
-  recipient: 
+  identity: /home/sky/.config/sops/age/keys.txt
+  recipient: age1kyu4t3wc94687gy4pw58jdnftckwh2ewpnqrqd2jvu9wvwa3sf3qywmgap
 {{- end }}
+git:
+  autoAdd: true
