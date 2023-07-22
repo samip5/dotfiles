@@ -72,7 +72,7 @@ format: yaml
 encryption: age
 {{- if $agekey }}
 age:
-  identity: /home/sky/.config/sops/age/keys.txt
+  identity: {{ .chezmoi.homeDir }}/.config/sops/age/keys.txt
   recipient: age1kyu4t3wc94687gy4pw58jdnftckwh2ewpnqrqd2jvu9wvwa3sf3qywmgap
 {{- end }}
 git:
