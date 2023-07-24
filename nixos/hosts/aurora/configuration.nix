@@ -3,8 +3,8 @@
 # and in the NixOS manual (accessible by running `nixos-help`).
 
 { config, pkgs, ... }:
-
-config = {
+{
+  config = {
     modules = {
       # Device specific options
       device = {
@@ -52,7 +52,7 @@ config = {
         };
         efi.efiSysMountPoint = "/boot";
         efi.canTouchEfiVariables = true;
-     }
-
+      };
+     };
 }
 
