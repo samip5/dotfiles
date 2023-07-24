@@ -35,8 +35,7 @@
       };
 
       flake.nixosConfigurations = {
-        budimanjojo-vm = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-vm" "budiman";
-        budimanjojo-main = myLib.mkNixosSystem "x86_64-linux" "budimanjojo-main" "budiman";
+        aurora = myLib.mkNixosSystem "x86_64-linux" "aurora" "sky";
       };
     };
 }
