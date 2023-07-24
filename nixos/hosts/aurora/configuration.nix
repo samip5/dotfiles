@@ -41,7 +41,6 @@
           devices = {
            device = "/dev/disk/by-uuid/caaa4bb9-4464-4849-aa87-5a62d10faecc";
            preLVM = true;
-           allowDiscards = true;
           };
          };
        };
@@ -54,5 +53,6 @@
         efi.canTouchEfiVariables = true;
       };
      };
+   };
 }
 
