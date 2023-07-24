@@ -10,6 +10,9 @@
       device = {
         cpu = "intel";
         gpu = "intel";
+        monitors = [
+         { name = "DP-1"; width = "1920"; height = "1080"; }
+        ];
         hasBluetooth = true;
         hasSound = true;
       };
