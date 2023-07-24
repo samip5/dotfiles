@@ -1,0 +1,77 @@
+{ config, pkgs, inputs, ... }:
+let
+  deviceCfg = config.modules.device;
+in {
+  sops.secrets.sky-password = {
+    sopsFile = ./secret.sops.yaml;
+    neededForUsers = true;
+  };
+
+  users.mutableUsers = false;
+  users.users.${deviceCfg.username} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    shell = pkgs.fish;
+    passwordFile = config.sops.secrets.sky-password.path;
+  };
+
+  networking.hostName = deviceCfg.hostname;
+
+  time.timeZone = "Europe/Helsinki";
+
+  security = {
+    sudo.wheelNeedsPassword = false;
+    polkit.enable = true;
+  };
+
+  # Programs that should always be needed
+  modules.program.tui-utils.enable = true;
+
+  nix = {
+    settings = {
+      substituters = [
+        "https://hyprland.cachix.org"
+        "https://viperml.cachix.org"
+      ];
+      trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "viperml.cachix.org-1:qZhKBMTfmcLL+OG6fj/hzsMEedgKvZVFRRAhq7j8Vh8="
+      ];
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    registry.nixpkgs.flake = inputs.nixpkgs;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      keep-outputs          = true
+      keep-derivations      = true
+    '';
+  };
+
+  system = {
+    autoUpgrade = {
+      enable = false;
+      flake = builtins.toString ../../.;
+    };
+    stateVersion = "23.05";
+  };
+
+  documentation.nixos.enable = false;
+
+  home.manager = {
+    home = {
+      username = deviceCfg.username;
+      homeDirectory = "/home/" + deviceCfg.username;
+
+      stateVersion = "23.05";
+    };
+
+    programs = {
+      home-manager.enable = true;
+    };
+  };
+}
