@@ -35,15 +35,15 @@
 
      environment.variables.FLAKE = "${config.home.manager.home.homeDirectory}/code/Github/samip5/dotfiles";
 
-     
-
      boot = {
        initrd = {
          luks = {
           devices = {
-           device = "UUID=caaa4bb9-4464-4849-aa87-5a62d10faecc";
-           preLVM = true;
-           allowDiscards = true;
+           luksroot = {
+             device = "UUID=caaa4bb9-4464-4849-aa87-5a62d10faecc";
+             preLVM = true;
+             allowDiscards = true;
+           };
           };
          };
        };
@@ -55,7 +55,8 @@
         efi.efiSysMountPoint = "/boot";
         efi.canTouchEfiVariables = true;
       };
-     };
+     };     
+
    };
 }
 
