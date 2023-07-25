@@ -20,6 +20,7 @@ in {
       usbutils
       vim
       mosh
+      neofetch
     ];
   };
 }
