@@ -15,6 +15,11 @@ in {
     initialPassword = "Lol12";
   };
 
+  services.getty.autologinUser = deviceCfg.username;
+  services.greetd.settings.initial_session.user = deviceCfg.username;
+  services.greetd.settings.default_session.user = deviceCfg.username;
+  services.xserver.displayManager.autoLogin.user = deviceCfg.username;
+
   networking.hostName = deviceCfg.hostname;
 
   time.timeZone = "Europe/Helsinki";

@@ -44,7 +44,6 @@ in {
       settings = {
         initial_session = {
           command = "${inputs.hyprland.packages.${system}.hyprland}/bin/Hyprland";
-          user = "greeter";
         };
         default_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${inputs.hyprland.packages.${system}.hyprland}/bin/Hyprland";

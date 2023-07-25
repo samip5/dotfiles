@@ -42,7 +42,6 @@ in {
       settings = {
         initial_session = {
           command = "${pkgs.sway}/bin/sway";
-          user = "greeter";
         };
         default_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd ${pkgs.sway}/bin/sway";
