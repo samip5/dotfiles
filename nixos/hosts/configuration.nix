@@ -2,17 +2,17 @@
 let
   deviceCfg = config.modules.device;
 in {
-  sops.secrets.sky-password = {
-    sopsFile = ./secret.sops.yaml;
-    neededForUsers = true;
-  };
+  #sops.secrets.sky-password = {
+  #  sopsFile = ./secret.sops.yaml;
+  #  neededForUsers = true;
+  #};
 
-  users.mutableUsers = false;
+  #users.mutableUsers = false;
   users.users.${deviceCfg.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.fish;
-    passwordFile = config.sops.secrets.sky-password.path;
+    initialPassword = "Lol12";
   };
 
   networking.hostName = deviceCfg.hostname;

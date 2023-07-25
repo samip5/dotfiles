@@ -16,7 +16,10 @@
         hasBluetooth = true;
         hasSound = true;
       };
- 
+      
+      #editor.neovim.enable = true;
+      editor.geany.enable = true;
+
       program.discord.enable = true;
       program.graphic.enable = true;
       program.gui-utils.enable = true;
@@ -28,7 +31,8 @@
       shell.lf.enable = true;
       shell.openssh.enable = true;
 
-      windowmanager.hyprland.enable = true;
+      #windowmanager.hyprland.enable = true;
+      windowmanager.sway.enable = true;
      };
 
      sops = {
