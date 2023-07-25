@@ -15,10 +15,21 @@
         ];
         hasBluetooth = true;
         hasSound = true;
+        authorizedKeys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAR0zt/ie+TMD+bY3wxfzbNNbAPH6NFJmC1AA066fsDr sky@Ryzen-Gaming-Gentoo"
+        ];
       };
-      
-      #editor.neovim.enable = true;
+
+      browser.opera.enable = true;
+      browser.firefox.enable = true;
+
+      editor.neovim.enable = true;
       editor.geany.enable = true;
+
+      monitoring.smartd.enable = true;
+
+      # multiplexer.tmux.enable = true;
+      multiplexer.zellij.enable = true;
 
       program.discord.enable = true;
       program.graphic.enable = true;
@@ -31,8 +42,8 @@
       shell.lf.enable = true;
       shell.openssh.enable = true;
 
-      #windowmanager.hyprland.enable = true;
-      windowmanager.sway.enable = true;
+      windowmanager.hyprland.enable = true;
+      # windowmanager.sway.enable = true;
      };
 
      sops = {
@@ -58,6 +69,7 @@
         systemd-boot = {
           enable = true;
           configurationLimit = 10;
+          netbootxyz.enable = true;
         };
         efi.efiSysMountPoint = "/boot";
         efi.canTouchEfiVariables = true;

@@ -38,7 +38,7 @@ in {
     services.xserver = {
       enable = true;
       displayManager = {
-        autoLogin.enable = true;
+        autoLogin.enable = false;
         defaultSession = "none+i3";
         sddm = {
           enable = true;

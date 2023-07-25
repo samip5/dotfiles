@@ -9,6 +9,9 @@
     ./home-manager.nix
 
     ./browser/firefox
+    ./browser/opera
+
+    ./desktopmanager/plasma
 
     ./editor/geany
     ./editor/neovim
