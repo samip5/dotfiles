@@ -19,6 +19,7 @@ in {
       tree
       usbutils
       vim
+      mosh
     ];
   };
 }
