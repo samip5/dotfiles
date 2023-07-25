@@ -17,12 +17,6 @@ in {
           owner = "${config.modules.device.username}";
           group = "users";
         };
-        talosconfig = {
-          sopsFile = ./secret.sops.yaml;
-          path = "${config.home.manager.home.homeDirectory}/.talos/config";
-          owner = "${config.modules.device.username}";
-          group = "users";
-        };
       };
 
     };
@@ -67,11 +61,8 @@ in {
         minio-client
         nodePackages.zx
         sops
-        talosctl
       ] ++ [
         myPkgs.krr
-        myPkgs.kubectl-rook-ceph
-        myPkgs.talhelper
       ];
     };
   };
