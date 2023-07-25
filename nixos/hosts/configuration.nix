@@ -21,12 +21,12 @@ in {
     settings = {
       initial_session.user = deviceCfg.username;
       default_session.user = deviceCfg.username;
-      default_session.command = ''
-            ${pkgs.greetd.tuigreet}/bin/tuigreet \
-              --time \
-              --asterisks \
-              --user-menu
-      '';
+      #default_session.command = ''
+      #      ${pkgs.greetd.tuigreet}/bin/tuigreet \
+      #        --time \
+      #        --asterisks \
+      #        --user-menu
+      #'';
     };
   };
 

@@ -20,7 +20,7 @@
         ];
       };
 
-      browser.opera.enable = true;
+      #browser.opera.enable = true;
       browser.firefox.enable = true;
 
       editor.neovim.enable = true;
@@ -29,7 +29,7 @@
       monitoring.smartd.enable = true;
 
       # multiplexer.tmux.enable = true;
-      multiplexer.zellij.enable = true;
+      # multiplexer.zellij.enable = true;
 
       program.discord.enable = true;
       program.graphic.enable = true;
@@ -42,8 +42,9 @@
       shell.lf.enable = true;
       shell.openssh.enable = true;
 
-      windowmanager.hyprland.enable = true;
+      # windowmanager.hyprland.enable = true;
       # windowmanager.sway.enable = true;
+      desktopmanager.plasma.enable = true; 
      };
 
      sops = {
