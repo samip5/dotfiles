@@ -16,8 +16,20 @@ in {
   };
 
   services.getty.autologinUser = deviceCfg.username;
-  services.greetd.settings.initial_session.user = deviceCfg.username;
-  services.greetd.settings.default_session.user = deviceCfg.username;
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session.user = deviceCfg.username;
+      default_session.user = deviceCfg.username;
+      default_session.command = ''
+            ${pkgs.greetd.tuigreet}/bin/tuigreet \
+              --time \
+              --asterisks \
+              --user-menu
+      '';
+    };
+  };
+
   services.xserver.displayManager.autoLogin.user = deviceCfg.username;
 
   networking.hostName = deviceCfg.hostname;
