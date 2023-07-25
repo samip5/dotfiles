@@ -15,7 +15,8 @@ in {
     initialPassword = "Lol12";
   };
 
-  services.getty.autologinUser = deviceCfg.username;
+  # I don't want auto-login on tty.
+  #services.getty.autologinUser = deviceCfg.username;
   services.greetd = {
     enable = true;
     settings = {
