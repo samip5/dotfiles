@@ -1,0 +1,54 @@
+name: Update nvfetcher
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: 0 * * * *
+  push:
+    paths:
+      - nixos/packages/nvfetcher.toml
+
+jobs:
+  update-nvfetcher:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - uses: workflow/nix-shell-action@v3
+        id: update_nvfetcher
+        with:
+          packages: nvfetcher
+          script: |
+            cd nixos/packages
+            echo "OUTPUT<<EOF" >> $GITHUB_OUTPUT
+            echo "$(nvfetcher | sed -n '/Changes/,/$!d/p')" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+      - name: Generate token
+        uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.BOT_APP_ID }}
+          private_key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          title: "chore(deps): update packages managed by nvfetcher"
+          commit-message: "chore(deps): update packages managed by nvfetcher"
+          delete-branch: true
+          committer: samip5-bot <118629685+samip5-bot[bot]@users.noreply.github.com>
+          author: samip5-bot <118629685+samip5-bot[bot]@users.noreply.github.com>
+          body: |
+            ${{ steps.update_nvfetcher.outputs.OUTPUT }}
+      - name: Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash

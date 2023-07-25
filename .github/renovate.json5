@@ -1,0 +1,47 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabled": true,
+  "platform": "github",
+  "onboarding": false,
+  "requireConfig": "optional",
+  "commitBodyTable": true,
+  "timezone": "Europe/Helsinki",
+  "semanticCommits": "enabled",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": ["prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "automerge": true,
+  "ignoreTests": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "after 1am and before 3am"
+    ]
+  },
+  "nix": {
+    "enabled": true
+  },
+  "extends": [
+    "config:base",
+    "github>samip5/k8s-cluster//.github/renovate-bot.json5",
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.chezmoiscripts\\/.+\\.sh\\.tmpl$"],
+      "matchStrings": [
+        "# renovate: depName=(?<depName>.*) datasource=(?<datasource>.*)\\n\\s*current_\\w+_version=(?<currentValue>.+)\\b"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": "kubernetes-sigs/kustomize",
+      "versioning": "regex:^kustomize\\/v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
+    },
+    {
+      "matchDepNames": "wez/wezterm",
+      "versioning": "regex:^(?<major>\\d{4})(?<minor>\\d{2})(?<patch>\\d{2})-(?<build>\\d+)-(?<revision>.+)$"
+    }
+  ]
+}
