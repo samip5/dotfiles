@@ -7,7 +7,7 @@
   "commitBodyTable": true,
   "timezone": "Europe/Helsinki",
   "semanticCommits": "enabled",
-  "dependencyDashboard": true,
+  "dependencyDashboard": false,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "username": "samip5-bot",
