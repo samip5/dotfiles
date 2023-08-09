@@ -103,11 +103,11 @@
             "name": null,
             "owner": "robusta-dev",
             "repo": "krr",
-            "rev": "v1.5.1-pre",
-            "sha256": "sha256-5sAWFiNodvmYvDZinSeulbOLqMPnrGo/JFx37EXA3Zw=",
+            "rev": "v1.5.2-pre",
+            "sha256": "sha256-ehGJ5cp2quN91aMnk181OxHzEqaKzxtVNg+0l7c45hw=",
             "type": "github"
         },
-        "version": "v1.5.1-pre"
+        "version": "v1.5.2-pre"
     },
     "luasnip": {
         "cargoLocks": null,
@@ -171,7 +171,7 @@
     },
     "oil-nvim": {
         "cargoLocks": null,
-        "date": "2023-08-08",
+        "date": "2023-08-09",
         "extract": null,
         "name": "oil-nvim",
         "passthru": null,
@@ -183,11 +183,11 @@
             "name": null,
             "owner": "stevearc",
             "repo": "oil.nvim",
-            "rev": "b24380c0e17d21271cc04d94827a07397b9fc4dc",
-            "sha256": "sha256-VoY71Omg1Dmg8O6UTFWYuaEb2rMs9UaMbCcxIuQlkUY=",
+            "rev": "0e5fca35cdc743cf3a448cea1a6251cf25cebafa",
+            "sha256": "sha256-Jxumg6RLt+qUEb+RTXMiXBT8r2hbsvqFfrMWciCI1Dg=",
             "type": "github"
         },
-        "version": "b24380c0e17d21271cc04d94827a07397b9fc4dc"
+        "version": "0e5fca35cdc743cf3a448cea1a6251cf25cebafa"
     },
     "prometheus-api-client": {
         "cargoLocks": null,
