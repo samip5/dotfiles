@@ -22,6 +22,8 @@ jobs:
         id: update_nvfetcher
         with:
           packages: nvfetcher
+          environment: |
+            NIXPKGS_ALLOW_BROKEN=1
           script: |
             cd nixos/packages
             echo "OUTPUT<<EOF" >> $GITHUB_OUTPUT
