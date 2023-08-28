@@ -1,5 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+   "extends": [
+    "config:base",
+    ":semanticCommits",
+    ":automergeBranch",
+  ],
   "enabled": true,
   "platform": "github",
   "onboarding": false,
@@ -24,9 +29,6 @@
   "nix": {
     "enabled": true
   },
-  "extends": [
-    "config:base",
-  ],
   "regexManagers": [
     {
       "fileMatch": ["\\.chezmoiscripts\\/.+\\.sh\\.tmpl$"],
