@@ -38,7 +38,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
+  #programs.nm-applet.enable = true;
   #networking.wireless.enable = true;
   #networking.wireless.userControlled.enable = true;
   #networking.wireless.userControlled.group = "wheel";
