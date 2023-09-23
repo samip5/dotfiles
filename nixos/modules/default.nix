@@ -19,9 +19,6 @@
     ./homelab/diy-keyboard
     ./homelab/kubernetes
 
-    ./monitoring/grafana
-    ./monitoring/prometheus
-    ./monitoring/smartd
 
     ./multiplexer/tmux
     ./multiplexer/zellij
@@ -31,10 +28,9 @@
     ./program/discord
     ./program/hugo
     ./program/libreoffice
-    ./program/msmtp
     ./program/nextcloud
     ./program/obs-studio
-    ./program/syncthing
+    #./program/syncthing
     ./program/yamllint
 
     ./shell/fish

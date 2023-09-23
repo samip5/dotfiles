@@ -23,10 +23,10 @@
       #browser.opera.enable = true;
       browser.firefox.enable = true;
 
-      editor.neovim.enable = true;
+      #editor.neovim.enable = true;
       editor.geany.enable = true;
 
-      monitoring.smartd.enable = true;
+      #monitoring.smartd.enable = true;
 
       # multiplexer.tmux.enable = true;
       # multiplexer.zellij.enable = true;
@@ -36,7 +36,7 @@
       program.gui-utils.enable = true;
       program.libreoffice.enable = true;
       program.media.enable = true;
-      program.nextcloud.enable = true;
+      #program.nextcloud.enable = true;
       shell.fish.enable = true;
       shell.git.enable = true;
       shell.lf.enable = true;
