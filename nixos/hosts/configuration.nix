@@ -18,7 +18,7 @@ in {
   # I don't want auto-login on tty.
   #services.getty.autologinUser = deviceCfg.username;
   services.greetd = {
-    enable = true;
+    #enable = true;
     settings = {
       initial_session.user = deviceCfg.username;
       default_session.user = deviceCfg.username;

@@ -13,7 +13,7 @@ in {
     home.manager = {
       home.packages = with pkgs; [
         bat
-        exa
+        eza
         fd
         fzf
         fish
