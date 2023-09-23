@@ -32,6 +32,7 @@
       # multiplexer.zellij.enable = true;
 
       program.discord.enable = true;
+      #program.netmanager.enable = true;
       program.graphic.enable = true;
       program.gui-utils.enable = true;
       program.libreoffice.enable = true;
