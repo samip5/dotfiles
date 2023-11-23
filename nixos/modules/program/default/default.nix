@@ -7,5 +7,6 @@
     ./gui-utils.nix
     ./media.nix
     ./tui-utils.nix
+    ./plex.nix
   ];
 }
