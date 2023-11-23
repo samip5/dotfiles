@@ -7,7 +7,7 @@ in {
 
   config = mkIf cfg.enable {
     home.manager.home.packages = with pkgs; [
-      plexmediaplayer
+      plex-media-player
       plex-mpv-shim
     ];
   };
