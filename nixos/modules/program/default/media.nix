@@ -10,6 +10,7 @@ in {
       gnome.eog
       gnome.totem
       rhythmbox
+      vlc
     ];
   };
 }
