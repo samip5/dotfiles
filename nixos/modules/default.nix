@@ -26,6 +26,7 @@
     ./program/adb
     ./program/default
     ./program/discord
+    ./program/matrix
     ./program/hugo
     ./program/libreoffice
     ./program/nextcloud
