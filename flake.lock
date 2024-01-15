@@ -267,11 +267,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1705275933,
-        "narHash": "sha256-0xiaHr3InXCx1XOmbAc5puyi+QzTr7AUT8z9jwve64s=",
+        "lastModified": 1705283909,
+        "narHash": "sha256-7F2KyTB4cApsHg7oltJ1r0QFWMjWTOaS9m2IbKFhj6Y=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c6522270eb2d1fb97f78ddb3ed5756e37764fcd2",
+        "rev": "375b9a949232cd1e31bd89d197a5605a17d2aeb3",
         "type": "github"
       },
       "original": {
