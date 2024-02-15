@@ -9,6 +9,7 @@ in {
     home.manager.home.packages = with pkgs; [
       gnome.gnome-calculator
       gparted
+      veracrypt
     ];
   };
 }

@@ -5,5 +5,6 @@ mkShell {
     nvfetcher
     nix-prefetch
     hydra-check
+    cifs-utils
   ];
 }

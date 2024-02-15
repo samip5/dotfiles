@@ -11,6 +11,8 @@ in {
       gnome.totem
       rhythmbox
       vlc
+      mpv-unwrapped
+      cifs-utils
     ];
   };
 }
