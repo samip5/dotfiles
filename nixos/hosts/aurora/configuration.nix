@@ -38,6 +38,7 @@
       program.libreoffice.enable = true;
       program.media.enable = true;
       program.plex.enable = true;
+      program.tor.enable = true;
       #program.nextcloud.enable = true;
       shell.fish.enable = true;
       shell.git.enable = true;
