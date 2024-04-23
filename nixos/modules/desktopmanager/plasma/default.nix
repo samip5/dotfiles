@@ -10,15 +10,12 @@ in {
     modules.system.sound.enable = true;
     modules.system.video.enable = true;
 
+    services.displayManager.sddm.enable = true;
+    services.displayManager.defaultSession = "plasma";
+    services.displayManager.autoLogin.enable = false;
+
     services.xserver = {
       enable = true;
-      displayManager = {
-         autoLogin.enable = false;
-         defaultSession = "plasma";
-         sddm = {
-           enable = true;
-         };
-      };
       desktopManager = {
         plasma5.enable = true;
         xterm.enable = false;
