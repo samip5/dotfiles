@@ -31,7 +31,8 @@ in {
     };
   };
 
-  services.xserver.displayManager.autoLogin.user = deviceCfg.username;
+  #services.xserver.displayManager.autoLogin.user = deviceCfg.username;
+  services.displayManager.autoLogin.user = deviceCfg.username;
 
   networking.hostName = deviceCfg.hostname;
 
