@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719177087,
-        "narHash": "sha256-3TqSVmZINDBQVo0AazepUYnDEGDOMYX4WwdKb5siZGA=",
+        "lastModified": 1719180626,
+        "narHash": "sha256-vZAzm5KQpR6RGple1dzmSJw5kPivES2heCFM+ZWkt0I=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "6a9a1e51bbb8c301eae5aa63c9fc3c751ec5315b",
+        "rev": "6b1f90a8ff92e81638ae6eb48cd62349c3e387bb",
         "type": "github"
       },
       "original": {
@@ -116,11 +116,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1719164993,
-        "narHash": "sha256-yfDdjbR7Mgwk0c4MQNLHQbPUOXyp07yxsyTYrvLWjGA=",
+        "lastModified": 1719266290,
+        "narHash": "sha256-Uo5/BVrCzBTJySygnSzGNhb+pQe1YB5GJvMn9ExVIiw=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "8a68199a0ceb2894a5d9cc300961c38123ac0312",
+        "rev": "4dd2b5902e770eeaf84820eccfebb5451aedb6a5",
         "type": "github"
       },
       "original": {
@@ -351,11 +351,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1719173514,
-        "narHash": "sha256-klPaPJCsrR375YDR/yiD50PzTMxiDCwd6jdZKDWHgPY=",
+        "lastModified": 1719261983,
+        "narHash": "sha256-J9/+U1U/WdVEBRyPD+FTwgs6TBHED9JTUen8QpkYObA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "255122407be8684afd4627ff97331491e127f15a",
+        "rev": "a21a417c111a1e8263cd0d9b9fe137df17004665",
         "type": "github"
       },
       "original": {
@@ -422,11 +422,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719030461,
-        "narHash": "sha256-zSwwPUUNJqoZEIVC4BozECTtISLCt9LOQUXNmEaG3jQ=",
+        "lastModified": 1719201087,
+        "narHash": "sha256-BatSMdO3px99PhqwziYyuL2d3DNUxdhqyEcqcJwy2g8=",
         "owner": "budimanjojo",
         "repo": "talhelper",
-        "rev": "8998e8f0350d128533d37a6a2f867af8e61e93db",
+        "rev": "d0aeb876294344f418831782770b564dcb6377cb",
         "type": "github"
       },
       "original": {
