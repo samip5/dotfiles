@@ -20,7 +20,7 @@
         ];
       };
 
-      #browser.opera.enable = true;
+      browser.google-chrome.enable = true;
       browser.firefox.enable = true;
 
       #editor.neovim.enable = true;

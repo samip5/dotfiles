@@ -8,6 +8,7 @@
     # Home manager alias
     ./home-manager.nix
 
+    ./browser/google-chrome
     ./browser/firefox
     ./browser/opera
 
