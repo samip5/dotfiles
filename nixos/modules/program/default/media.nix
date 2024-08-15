@@ -7,8 +7,8 @@ in {
 
   config = mkIf cfg.enable {
     home.manager.home.packages = with pkgs; [
-      gnome.eog
-      gnome.totem
+      eog
+      totem
       rhythmbox
       vlc
       mpv-unwrapped

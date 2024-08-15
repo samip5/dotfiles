@@ -57,7 +57,7 @@
 
      environment.variables.FLAKE = "${config.home.manager.home.homeDirectory}/code/Github/samip5/dotfiles";
      services.greetd.enable = false;
-     services.xserver.libinput.enable = true;
+     services.libinput.enable = true;
 
      boot = {
        initrd = {

@@ -7,7 +7,7 @@ in {
 
   config = mkIf cfg.enable {
     home.manager.home.packages = with pkgs; [
-      gnome.gnome-calculator
+      gnome-calculator
       gparted
       veracrypt
     ];
