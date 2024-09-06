@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725180166,
-        "narHash": "sha256-fzssXuGR/mCeGbzM1ExaTqDz7QDGta3WA4jJsZyRruo=",
+        "lastModified": 1725628988,
+        "narHash": "sha256-Y6TBMTGu4bddUwszGjlcOuN0soVc1Gv43hp+1sT/GNI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "471e3eb0a114265bcd62d11d58ba8d3421ee68eb",
+        "rev": "127ccc3eb7e36fa75e8c3fbd8a343154f66cc1c6",
         "type": "github"
       },
       "original": {
@@ -150,11 +150,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1725563063,
-        "narHash": "sha256-jA5U0yT+fXyRijo2ErvR//Jyb4IyidDOhII5Vom0T2c=",
+        "lastModified": 1725580992,
+        "narHash": "sha256-DM6yo18MJnI72KEfRCDjue+JMiJWJNMbUr4YJ7/BJro=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "727f1b54cd1ba48774092a5d54acc0e55f3ffe0f",
+        "rev": "b0fca6eaf00a2c5061f499c76ec8d60772b6a719",
         "type": "github"
       },
       "original": {
@@ -379,11 +379,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1725575621,
-        "narHash": "sha256-HWKTj7+KwPxAGVG2Xxz1W1J4fiigi+XslgLtNuVGRyE=",
+        "lastModified": 1725659086,
+        "narHash": "sha256-tBESqtOQzsUJzY07lkcZ44HaiPve5QxaCsOlvP3WcM4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "58c6766c739e0e4d605f89159b5aa289e6a199a2",
+        "rev": "676dd41bd95bb0a1d612c5e70ae9539efd2d8fab",
         "type": "github"
       },
       "original": {
@@ -450,11 +450,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725423288,
-        "narHash": "sha256-m5jTeaENGYCsOLyv80GT4H/MlerqIyHYPTrFBttpKpU=",
+        "lastModified": 1725595762,
+        "narHash": "sha256-RP9PX6W/vKSjvvCTHIvHLeQvGBLZFdadSEXXSeTrqkY=",
         "owner": "budimanjojo",
         "repo": "talhelper",
-        "rev": "d563d79baecff1c5c7de2d9ae12a029c2a782e6f",
+        "rev": "aa37205bedea8dd05e790644d967bd16a3dbcc52",
         "type": "github"
       },
       "original": {
