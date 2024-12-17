@@ -13,7 +13,10 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  
+  boot.kernelParams = [
+     "acpi_enforce_resources=lax" 
+     "i915.enable_dc=0"
+  ];  
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9a4b7692-420e-44c9-8e6b-d7dab70902ea";
