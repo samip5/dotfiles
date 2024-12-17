@@ -149,8 +149,8 @@ in {
           set -g fish_greeting
 
           # Environment variables
-          set -gx EDITOR nvim
-          set -gx VISUAL nvim
+          set -gx EDITOR nano
+          set -gx VISUAL nano
 
           # Termite and Alacritty tmux SSH error workaround
           if test $TERM = xterm-termite; or test $TERM = alacritty

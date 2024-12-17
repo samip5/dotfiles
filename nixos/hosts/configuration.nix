@@ -10,7 +10,7 @@ in {
   #users.mutableUsers = false;
   users.users.${deviceCfg.username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "dialout" ];
     shell = pkgs.fish;
     initialPassword = "Lol12";
   };

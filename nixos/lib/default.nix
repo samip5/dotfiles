@@ -26,7 +26,7 @@ in {
           };
         }
         inputs.home-manager.nixosModules.home-manager
-        inputs.nur.nixosModules.nur
+        inputs.nur.modules.nixos.default
         inputs.sops-nix.nixosModules.sops
         inputs.hyprland.nixosModules.default
         # Load the modules
