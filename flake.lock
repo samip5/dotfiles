@@ -242,11 +242,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1737842278,
-        "narHash": "sha256-5N0ExKra/jw3HI/0EEIzmeJKHN9RIBV7ceR/sxQR11s=",
+        "lastModified": 1737925585,
+        "narHash": "sha256-+Y0fBW4G2KCmf9NY0bjgHM1W/mrTmm22uO/0aDVScNM=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "8b1d6e3009c540457068e23e6c2bc201d20ce4d1",
+        "rev": "2f55806d6f11a1e81e3e821cb0327779d5cc50e6",
         "type": "github"
       },
       "original": {
@@ -556,11 +556,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1737746512,
-        "narHash": "sha256-nU6AezEX4EuahTO1YopzueAXfjFfmCHylYEFCagduHU=",
+        "lastModified": 1737885589,
+        "narHash": "sha256-Zf0hSrtzaM1DEz8//+Xs51k/wdSajticVrATqDrfQjg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "825479c345a7f806485b7f00dbe3abb50641b083",
+        "rev": "852ff1d9e153d8875a83602e03fdef8a63f0ecf8",
         "type": "github"
       },
       "original": {
@@ -572,11 +572,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1737746512,
-        "narHash": "sha256-nU6AezEX4EuahTO1YopzueAXfjFfmCHylYEFCagduHU=",
+        "lastModified": 1737885589,
+        "narHash": "sha256-Zf0hSrtzaM1DEz8//+Xs51k/wdSajticVrATqDrfQjg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "825479c345a7f806485b7f00dbe3abb50641b083",
+        "rev": "852ff1d9e153d8875a83602e03fdef8a63f0ecf8",
         "type": "github"
       },
       "original": {
@@ -593,11 +593,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1737848713,
-        "narHash": "sha256-W8OEe5Hze2HoKWaisyNUyDKzhDr7FIROCbx11/Ye7JQ=",
+        "lastModified": 1737928024,
+        "narHash": "sha256-E3Y7NbbguVWz+J/xG20Grbns3v+y42QAxFuTxEiQN60=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "595e18494dbdd9aea05784d11572824ae5949359",
+        "rev": "d8b236e8d1ecd476478d45d5fcad21af4a2c46ca",
         "type": "github"
       },
       "original": {
@@ -686,11 +686,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737605272,
-        "narHash": "sha256-kgg2zcjNs4l5CScBaqilDqh347JOhsWYEv9YaE80fzU=",
+        "lastModified": 1737862560,
+        "narHash": "sha256-i5FV1/V4Rew5NYal5Q+VsoVWhGwAqUjA5XiFswsaD9I=",
         "owner": "budimanjojo",
         "repo": "talhelper",
-        "rev": "ec245712837e3dfc45ba47b7af7bafa41cf150e4",
+        "rev": "eac464ee2305fa0daab5a59842b24b5e18c13a93",
         "type": "github"
       },
       "original": {
