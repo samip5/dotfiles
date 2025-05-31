@@ -32,6 +32,7 @@
     ./program/libreoffice
     ./program/nextcloud
     ./program/obs-studio
+    ./program/media
     #./program/syncthing
     ./program/yamllint
 

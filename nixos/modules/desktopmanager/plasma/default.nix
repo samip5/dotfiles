@@ -17,7 +17,7 @@ in {
     services.xserver = {
       enable = true;
       desktopManager = {
-        plasma5.enable = true;
+        plasma6.enable = true;
         xterm.enable = false;
         runXdgAutostartIfNone = true;
       };
