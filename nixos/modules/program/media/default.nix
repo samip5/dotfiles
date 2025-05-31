@@ -6,6 +6,6 @@ in {
   options.modules.program.jellyfinmediaplayer = { enable = mkEnableOption "jellyfinmediaplayer"; };
 
   config = mkIf cfg.enable {
-    home.manager.home.packages = [ pkgs.jellyfinmediaplayer ];
+    home.manager.home.packages = [ pkgs.jellyfin-media-player ];
   };
 }

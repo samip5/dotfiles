@@ -39,6 +39,7 @@
       program.media.enable = true;
       program.plex.enable = true;
       program.tor.enable = true;
+      program.jellyfinmediaplayer.enable = true;
       #program.nextcloud.enable = true;
       shell.fish.enable = true;
       shell.git.enable = true;
