@@ -40,6 +40,12 @@
       program.plex.enable = true;
       program.tor.enable = true;
       program.jellyfinmediaplayer.enable = true;
+
+      program.jetbrain.toolbox.enable = true;
+
+      program.1pass.cli.enable = true;
+      program.1pass.gui.enable = true;
+
       #program.nextcloud.enable = true;
       shell.fish.enable = true;
       shell.git.enable = true;

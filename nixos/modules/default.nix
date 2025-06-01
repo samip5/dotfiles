@@ -33,6 +33,7 @@
     ./program/nextcloud
     ./program/obs-studio
     ./program/media
+    ./program/jetbrain
     #./program/syncthing
     ./program/yamllint
 
