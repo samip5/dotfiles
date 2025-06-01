@@ -6,6 +6,9 @@ in {
       inherit system;
       pkgs = import inputs.nixpkgs {
         inherit system;
+        config.permittedInsecurePackages = [
+          "olm-3.2.16"
+        ];
         config.allowUnfree = true;
         overlays = [
           (import ../packages/overlay.nix {inherit inputs system;})

@@ -36,15 +36,14 @@
       program.graphic.enable = true;
       program.gui-utils.enable = true;
       program.libreoffice.enable = true;
+      program.matrix.enable = true;
       program.media.enable = true;
       program.plex.enable = true;
       program.tor.enable = true;
       program.jellyfinmediaplayer.enable = true;
-
+      program.onepass.cli.enable = true;
+      program.onepass.gui.enable = true;
       program.jetbrain.toolbox.enable = true;
-
-      program.1pass.cli.enable = true;
-      program.1pass.gui.enable = true;
 
       #program.nextcloud.enable = true;
       shell.fish.enable = true;
