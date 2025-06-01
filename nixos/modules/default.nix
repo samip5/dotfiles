@@ -34,6 +34,7 @@
     ./program/obs-studio
     ./program/media
     ./program/jetbrain
+    ./program/onepass
     #./program/syncthing
     ./program/yamllint
 
