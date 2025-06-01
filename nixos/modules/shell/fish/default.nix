@@ -12,12 +12,7 @@ in {
 
     home.manager = {
       home.packages = with pkgs; [
-        bat
-        eza
-        fd
-        fzf
         fish
-        thefuck
       ];
       programs.fish = {
         enable = true;
