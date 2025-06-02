@@ -76,7 +76,7 @@ in {
       enable = false;
       flake = builtins.toString ../../.;
     };
-    stateVersion = "25.11";
+    stateVersion = "25.05";
   };
 
   documentation.nixos.enable = false;
@@ -86,7 +86,7 @@ in {
       username = deviceCfg.username;
       homeDirectory = "/home/" + deviceCfg.username;
 
-      stateVersion = "25.11";
+      stateVersion = "25.05";
     };
 
     programs = {
