@@ -1,10 +1,10 @@
 { inputs, ... }: let
-  inherit (inputs.nixpkgs) lib;
+  inherit (inputs.nixpkgs-stable) lib;
 in {
   mkNixosSystem = system: hostname: username:
     lib.nixosSystem {
       inherit system;
-      pkgs = import inputs.nixpkgs {
+      pkgs = import inputs.nixpkgs-stable {
         inherit system;
         config.permittedInsecurePackages = [
           "olm-3.2.16"
@@ -21,8 +21,11 @@ in {
             inherit inputs system;
             myConfig = { hostname = hostname; username = username; };
             myPkgs = inputs.self.legacyPackages.${system};
-            pkgs-stable = import inputs.nixpkgs-stable {
+            pkgs-unstable = import inputs.nixpkgs {
               inherit system;
+              config.permittedInsecurePackages = [
+                 "olm-3.2.16" 
+              ];
               config.allowUnfree = true;
               overlays = [ (import ../packages/overlay.nix {inherit inputs system;}) ];
             };
