@@ -37,6 +37,7 @@
     ./program/onepass
     #./program/syncthing
     ./program/yamllint
+    ./program/vpn
 
     ./shell/fish
     ./shell/git

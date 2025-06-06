@@ -43,7 +43,10 @@
       program.jellyfinmediaplayer.enable = true;
       program.onepass.cli.enable = true;
       program.onepass.gui.enable = true;
-      program.jetbrain.toolbox.enable = true;
+      program.jetbrains.toolbox.enable = false;
+      program.jetbrains.idea.enable = true;
+
+      program.tailscale.enable = true;
 
       #program.nextcloud.enable = true;
       shell.fish.enable = true;
