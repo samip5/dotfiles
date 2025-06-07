@@ -49,6 +49,7 @@
       program.jetbrains.toolbox.enable = false;
       program.jetbrains.idea.enable = true;
       program.net-utils.mikrotik.winbox4.enable = true;
+      program.net-utils.nmap.enable = true;
 
       program.tailscale.enable = true;
 
