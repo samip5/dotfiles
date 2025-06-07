@@ -38,6 +38,7 @@
     #./program/syncthing
     ./program/yamllint
     ./program/vpn
+    ./program/net-utils
 
     ./shell/fish
     ./shell/git
