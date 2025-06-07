@@ -9,17 +9,16 @@ in {
     modules.shell.git.enable = true;
     modules.shell.nix-direnv.enable = true;
 
-    sops = {
-      secrets = {
-        kubeconfig = {
-          sopsFile = ./secret.sops.yaml;
-          path = "${config.home.manager.home.homeDirectory}/.kube/config";
-          owner = "${config.modules.device.username}";
-          group = "users";
-        };
-      };
-
-    };
+   # sops = {
+   #   secrets = {
+   #     kubeconfig = {
+   #       sopsFile = ./secret.sops.yaml;
+   #       path = "${config.home.manager.home.homeDirectory}/.kube/config";
+   #       owner = "${config.modules.device.username}";
+   #       group = "users";
+   #     };
+   #   };
+   # };
 
     home.manager = {
       xdg.configFile."k9s".source = ./k9s;
@@ -58,11 +57,11 @@ in {
         kubectl
         kubernetes-helm
         kustomize
-        minio-client
-        nodePackages.zx
+#        minio-client
+#        nodePackages.zx
         sops
       ] ++ [
-        myPkgs.krr
+#        myPkgs.krr
       ];
     };
   };

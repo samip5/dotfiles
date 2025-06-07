@@ -23,6 +23,8 @@
       browser.google-chrome.enable = true;
       browser.firefox.enable = true;
 
+      homelab.kubernetes.enable = true;
+
       #editor.neovim.enable = true;
       editor.geany.enable = true;
 
@@ -40,7 +42,8 @@
       program.media.enable = true;
       program.plex.enable = true;
       program.tor.enable = true;
-      program.jellyfinmediaplayer.enable = true;
+      program.media.jellyfinplayer.enable = true;
+      program.media.spotify.enable = true;
       program.onepass.cli.enable = true;
       program.onepass.gui.enable = true;
       program.jetbrains.toolbox.enable = false;
@@ -67,6 +70,7 @@
      environment.variables.FLAKE = "${config.home.manager.home.homeDirectory}/code/Github/samip5/dotfiles";
      services.greetd.enable = false;
      services.libinput.enable = true;
+     services.tailscale.enable = true;
 
      boot = {
        initrd = {
