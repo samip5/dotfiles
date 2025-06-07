@@ -5,7 +5,7 @@ let
 in
 {
   options.modules.program.media = {
-    jellyfinplayer = lib.mkEnableOption "Jellyfin Media Player";
+    jellyfinplayer.enable = lib.mkEnableOption "Jellyfin Media Player";
     spotify.enable = lib.mkEnableOption "Spotify";
   };
 
