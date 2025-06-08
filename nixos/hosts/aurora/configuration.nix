@@ -33,6 +33,8 @@
       # multiplexer.tmux.enable = true;
       # multiplexer.zellij.enable = true;
 
+      program.dev.nodejs22.enable = true;
+
       program.discord.enable = true;
       #program.netmanager.enable = true;
       program.graphic.enable = true;
