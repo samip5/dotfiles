@@ -1,0 +1,27 @@
+name: Renovate
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 5 4 * * 5
+  push:
+    paths:
+      - .github/renovate.json5
+
+env:
+  LOG_LEVEL: debug
+  RENOVATE_DRY_RUN: false
+  RENOVATE_CONFIG_FILE: .forgejo/renovate.json5
+  RENOVATE_AUTODISCOVER: true
+  RENOVATE_AUTODISCOVER_FILTER: kryptonian/dotfiles
+
+jobs:
+  renovate:
+    runs-on: docker
+    steps:
+      - uses: actions/checkout
+      - name: Renovate
+        uses: github.com/renovatebot/github-action@v46.1.13
+        with:
+          configurationFile: "${{ env.RENOVATE_CONFIG_FILE }}"
+          token: "${{ steps.generate-token.outputs.token }}"
