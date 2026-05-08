@@ -2,7 +2,7 @@
 {{- $interactive := stdinIsATTY -}}
 
 {{- /* Template file for chezmoi config file */ -}}
-{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
+{{- $profile := "server" -}}{{/* "personal" | "association" | "server" */}}
 {{- $kubernetes := false -}}{{/* true if this machine is used for Kubernetes work */}}
 {{- $i3wm := false -}}{{/* true if this machine is using i3wm */}}
 {{- $swaywm := false -}}{{/* true if this machine is using swaywm */}}
@@ -18,7 +18,7 @@
 
 {{- $hostname := .chezmoi.hostname -}}
 {{- if eq $hostname "Ryzen-Gaming-Gentoo" -}}
-{{-   $headless = false -}}
+{{-   $profile = "personal" -}}
 {{-   $kubernetes = true -}}
 {{-   $i3wm = false -}}
 {{-   $swaywm = false -}}
@@ -26,7 +26,7 @@
 {{-   $agekey = true -}}
 {{- end -}}
 {{- if eq $hostname "Orion" -}}
-{{-   $headless = false -}}
+{{-   $profile = "personal" -}}
 {{-   $kubernetes = true -}}
 {{-   $i3wm = false -}}
 {{-   $swaywm = false -}}
@@ -34,17 +34,17 @@
 {{-   $agekey = true -}}
 {{- end -}}
 {{- if eq $hostname "Aurora" -}}
-{{-   $headless = false -}}
+{{-   $profile = "personal" -}}
 {{-   $kubernetes = true -}}
 {{-   $i3wm = false -}}
 {{-   $swaywm = true -}}
 {{-   $hyprlandwm = true -}}
 {{-   $agekey = true -}}
 {{- end -}}
-{{- if hasKey . "headless" -}}
-{{-   $headless = .headless -}}
+{{- if hasKey . "profile" -}}
+{{-   $profile = .profile -}}
 {{- else if $interactive -}}
-{{-   $headless = promptBool "headless" -}}
+{{-   $profile = promptString "profile (personal/association/server)" -}}
 {{- end -}}
 {{- if hasKey . "kubernetes" -}}
 {{-   $kubernetes = .kubernetes -}}
@@ -57,17 +57,33 @@
 {{-   $agekey = promptBool "agekey" -}}
 {{- end -}}
 
+{{- /* Git identity — prompted once, stored in chezmoi config */ -}}
+{{- $gitEmail := "" -}}
+{{- $gitName := "" -}}
+{{- if hasKey . "gitEmail" -}}
+{{-   $gitEmail = .gitEmail -}}
+{{- else if $interactive -}}
+{{-   $gitEmail = promptString "git email" -}}
+{{- end -}}
+{{- if hasKey . "gitName" -}}
+{{-   $gitName = .gitName -}}
+{{- else if $interactive -}}
+{{-   $gitName = promptString "git name" -}}
+{{- end -}}
+
 {{- if $interactive -}}
 {{-   writeToStdout "💡 Tip: you can re-enter your data with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
 data:
-  headless: {{ $headless }}
+  profile: {{ $profile }}
   kubernetes: {{ $kubernetes }}
   i3wm: {{ $i3wm }}
   swaywm: {{ $swaywm }}
   hyprlandwm: {{ $hyprlandwm }}
   agekey: {{ $agekey }}
+  gitEmail: {{ $gitEmail }}
+  gitName: {{ $gitName }}
 format: yaml
 encryption: age
 {{- if $agekey }}

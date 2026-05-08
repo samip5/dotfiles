@@ -8,9 +8,11 @@ if type -q direnv
     direnv hook fish | source
 end
 
+{{- if .kubernetes }}
 if type -q flux
     flux completion fish | source
 end
+{{- end }}
 
 fish_add_path "{{ .chezmoi.homeDir }}/.cargo/bin"
 fish_add_path "{{ .chezmoi.homeDir }}/.krew/bin"
@@ -37,4 +39,6 @@ end
 {{- end }}
 
 set -U fish_greeting
+{{- if eq .profile "personal" }}
 fish_ssh_agent
+{{- end }}

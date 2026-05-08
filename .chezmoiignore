@@ -6,8 +6,11 @@ install.sh
 .talos/config
 .config/k9s/
 {{- end }}
-{{- if .headless }}
+{{- if ne .profile "personal" }}
 .config/alacritty/
 .config/kitty/
 .config/wezterm/
+.config/hypr/
+.config/sway/
+.config/waybar/
 {{- end }}
