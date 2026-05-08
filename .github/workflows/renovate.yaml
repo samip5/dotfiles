@@ -28,9 +28,9 @@ jobs:
   renovate:
     runs-on: docker
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout
       - name: Generate Token
-        uses: tibdex/github-app-token@v2
+        uses: github.com/tibdex/github-app-token@v2
         id: generate-token
         with:
           app_id: ${{ secrets.BOT_APP_ID }}
@@ -40,7 +40,7 @@ jobs:
           echo "RENOVATE_DRY_RUN=${{ github.event.inputs.dryRun || env.RENOVATE_DRY_RUN }}" >> "${GITHUB_ENV}"
           echo "LOG_LEVEL=${{ github.event.inputs.logLevel || env.LOG_LEVEL }}" >> "${GITHUB_ENV}"
       - name: Renovate
-        uses: renovatebot/github-action@v46.1.13
+        uses: github.com/renovatebot/github-action@v46.1.13
         with:
           configurationFile: "${{ env.RENOVATE_CONFIG_FILE }}"
           token: "${{ steps.generate-token.outputs.token }}"
